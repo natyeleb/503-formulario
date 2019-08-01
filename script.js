@@ -9,6 +9,13 @@ let section = document.querySelector("section");
 let h2 = document.querySelector("h2");
 let a = document.querySelector("a");
 
+if(localStorage.nome){
+    div.style.display = "none";
+        section.style.display = "initial";
+        h2.innerHTML = `Seja bem vindo ${localStorage.nome}`;
+        a.innerHTML = `Seu email e ${localStorage.email}`;
+}
+
 function cadastro() {
     if(email.value !== "" && email.value === confimacaoEmail.value){
         localStorage.setItem("sexo" ,sexo.value);
@@ -18,8 +25,8 @@ function cadastro() {
         localStorage.setItem("senha" ,senha.value);
         div.style.display = "none";
         section.style.display = "initial";
-        h2.inner.HTML = `Seja bem vindo ${localStorage.nome}`;
-        a.inner.HTML = `Seu email e ${localStorage.email}`;
+        h2.innerHTML = `Seja bem vindo ${localStorage.nome}`;
+        a.innerHTML = `Seu email e ${localStorage.email} ,sua senha é ${localStorage.senha} e seu sexo é ${localStorage.sexo}`;
     }else{
         alert("erro")
     }
